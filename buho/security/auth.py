@@ -13,9 +13,9 @@ class FederationAuthentication(BaseAuthentication):
         user = {}
         user["id"] = request.META['HTTP_X_USER_ID']
         user["first_name"] = request.META['HTTP_X_USER_FIRSTNAME']
-        user["last_name"] = request.META.get['HTTP_X_USER_LASTNAME']
-        user["phone"] = request.META.get['HTTP_X_USER_PHONE']
-        user["email"] = request.META.get['HTTP_X_USER_EMAIL']
+        user["last_name"] = request.META['HTTP_X_USER_LASTNAME']
+        user["phone"] = request.META['HTTP_X_USER_PHONE']
+        user["email"] = request.META['HTTP_X_USER_EMAIL']
         user, __ = get_user_model().objects.get_or_create(
             username=user["email"],
             defaults=user,
