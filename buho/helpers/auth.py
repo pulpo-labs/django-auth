@@ -9,7 +9,7 @@ from django.conf import settings
 logger = logging.getLogger(__name__)
 
 
-class BearerAuthentication(BaseAuthentication):
+class FederationAuthentication(BaseAuthentication):
     """
     Simple token based authentication.
     This authentication class is useful for authenticating an OAuth2 access token against a remote
