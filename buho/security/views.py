@@ -7,7 +7,7 @@ from django.views.decorators.csrf import csrf_exempt
 from rest_framework.exceptions import AuthenticationFailed
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
-from .auth import FederationAuthentication
+from buho.security.auth import FederationAuthentication
 
 APOLLO_QUERY = '{"query":"query __ApolloGetServiceDefinition__ { _service { sdl } }"}'
 
