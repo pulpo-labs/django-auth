@@ -26,5 +26,6 @@ setup(
     install_requires=[
         "django >= 3.0.0",
         "djangorestframework >= 3.11.0",
+        "graphene-django >= 2.12.0"
     ]
 )

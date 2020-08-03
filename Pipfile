@@ -11,6 +11,7 @@ pylint-django = "*"
 [packages]
 django = "*"
 djangorestframework = "*"
+graphene-django = "*"
 
 [requires]
 python_version = "3.8"
