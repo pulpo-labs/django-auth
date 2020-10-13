@@ -28,15 +28,13 @@ def can(*permissions):
  
     return wrapped_decorator
 
-def require_authentication(*permissions):
-    def wrapped_decorator(func):
-        def inner(cls, info, *args, **kwargs):
-            if not info.context:
-                raise GraphQLError("Permission Denied.")
-            user = info.context.user
-            if not user.is_authenticated or not user.role:
-                raise GraphQLError("Permission Denied.")
+def require_authentication(func):
+    def inner(cls, info, *args, **kwargs):
+        if not info.context:
+            raise GraphQLError("Permission Denied.")
+        user = info.context.user
+        if not user.is_authenticated:
+            raise GraphQLError("Permission Denied.")
 
-            return func(cls, info, **kwargs)
-        return inner
-    return wrapped_decorator
+        return func(cls, info, **kwargs)
+    return inner
