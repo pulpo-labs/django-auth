@@ -8,8 +8,8 @@ with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name='buho-helpers-auth',
-    version='0.3.2',
+    name='django-auth',
+    version='0.3.3',
     packages=find_namespace_packages(include=['buho.*']),
     include_package_data=True,
     description='This project contains the authentication dependencies.',
