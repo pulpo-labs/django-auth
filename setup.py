@@ -9,7 +9,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-auth',
-    version='0.3.3',
+    version='1.0.1',
     packages=find_namespace_packages(include=['buho.*']),
     include_package_data=True,
     description='This project contains the authentication dependencies.',
