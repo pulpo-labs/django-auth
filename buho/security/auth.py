@@ -23,7 +23,7 @@ class FederationAuthentication(BaseAuthentication):
             defaults=user,
         )
         group = user.groups.all().first()
-        if not group:
+        if not group or group.name != request.META['HTTP_X_USER_GROUP']:
             group, _ = Group.objects.get_or_create(
                 name=request.META['HTTP_X_USER_GROUP']
             )
